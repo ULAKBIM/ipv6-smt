@@ -1,10 +1,11 @@
 ******************************************************************************
 * IPv6 Services Monitoring Tool (IPV6-SMT)
-*
+* 
+* Source: https://github.com/ULAKBIM/ipv6-smt
 * Author: Emre Yüce - ULAKBİM
 * Contact: emre.yuce[@]tubitak.gov.tr
 * Version: 0.1
-* Release date: 15.08.2012
+* Release date: 13.08.2012
 * License: GPL 2.0 or later
 * Current file: README
 * 
