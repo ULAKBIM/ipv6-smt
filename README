@@ -21,7 +21,6 @@ V.	KNOWN ISSUES AND WORKAROUNDS
 VI.	TECHNICAL SUPPORT
 
 
-
 I. BRIEF DESCRIPTION
 
 	IPv6 Services Monitoring Tool (IPV6-SMT) is a tool that monitors http, dns and smtp services and checks whether these services are available over IPv6. IPv6-SMT queries a given list of domain names and check for AAAA, NS and MX records. There are 3 different states defined for a service namely: 
