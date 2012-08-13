@@ -1,0 +1,95 @@
+******************************************************************************
+* IPv6 Services Monitoring Tool (IPV6-SMT)
+*
+* Author: Emre Yüce - ULAKBİM
+* Contact: emre.yuce[@]tubitak.gov.tr
+* Version: 0.1
+* Release date: 15.08.2012
+* License: GPL 2.0 or later
+* Current file: README
+* 
+* Thanks to Murat Soysal - ULAKBİM, Onur Bektaş - ULAKBİM, Uğur Yılmaz - ULAKBİM
+* 
+******************************************************************************
+
+CONTENTS
+I.	BRIEF DESCRIPTION
+II.	RELEASE INFO
+III.	REQUIREMENTS
+IV.	INSTALLATION & CONFIGURATION
+V.	KNOWN ISSUES AND WORKAROUNDS
+VI.	TECHNICAL SUPPORT
+
+
+
+I. BRIEF DESCRIPTION
+
+	IPv6 Services Monitoring Tool (IPV6-SMT) is a tool that monitors http, dns and smtp services and checks whether these services are available over IPv6. IPv6-SMT queries a given list of domain names and check for AAAA, NS and MX records. There are 3 different states defined for a service namely: 
+	- No IPv6 address assigned.
+	- IPv6 address assigned but there is no response to the requests over IPv6.
+	- Service fully supports IPv6.
+	
+	File list:
+	DOCUMENTATION FILES
+		README
+		TODO
+	PHP FILES
+		index.php
+		init.php
+		data_collector.php
+	CONFIG FILES
+		config.json
+		data/input.json
+	DATA FILES
+		data/domains_08-08-2012.json
+		data/count_10-08-2012.json
+	MISC
+		css/style.css
+		images/button-ipv6-small.png
+		js/sorttable.js
+		
+
+II. RELEASE INFO
+
+	v0.1
+	- First release of the script.
+	- Tested on Ubuntu 12.04.
+	- New feature: data_collector.php can only be run over CLI.
+
+
+III. REQUIREMENTS
+	
+	- Apache/2.2.22
+	- PHP 5.3.10 or later.
+	- nagios-plugins package.
+
+
+IV. INSTALLATION & CONFIGURATION
+
+	PHP and nagios-plugins package should be installed at the system.
+	As the second step you should take a look at the config.json file to set the paths for data directory and nagios-plugins scripts. 
+	You may configure debug mode as 1 if you like to see the details of what is being done.
+	Next step will be running the data_collector.php script on the command line. This script will collect all the necessary information and write them under the data directory in the json format.
+	Data collection may be added to the cron using the example below:
+
+	Crontab example line:
+		
+		# m h dom mon dow user  command
+		15 3    * * *   www-data    /usr/bin/php [exact_path]/data_collector.php
+	
+	When the data collection phase is completed, ipv6_smt.php will be executed through a browser. This script will read the collected data under domains directory and will show the domain service status report on the browser.
+	
+	Data files will be automatically created by reading input file under data directory. Names will be in the format domains_dd-mm-yyyy.json and count_dd-mm-yyyy.json .
+	
+	Select date list is created automatically by checking the domains_dd-mm-yyyy.json files under the data directory. If domains_dd-mm-yyyy.json file is smaller than 100b, it will not be listed in the select date list.
+
+
+V. KNOWN ISSUES AND WORKAROUNDS
+
+
+V. TECHNICAL SUPPORT 
+	
+	If you need technical assistance on this script or on IPv6, you may contact me at emre.yuce[@]tubitak.gov.tr .
+
+
+

@@ -1,0 +1,61 @@
+body, p, h1, h2, h3, h4, table, td, th, ul, ol, textarea, input {
+    font-family: verdana,helvetica,arial,sans-serif;
+}
+
+table, th, td, input, textarea {
+    font-size: 100%;
+}
+
+td {
+
+	/*border: 1px solid black;
+	width: 250px;
+	text-align: center;*/
+}
+
+table.ref {
+    background-color: #FFFFFF;
+    border: 1px solid #C3C3C3;
+    border-collapse: collapse;
+    /*width: 100%;*/
+    text-align: center;
+}
+
+table.ref th {
+    background-color: #E5EECC;
+    border: 1px solid #C3C3C3;
+    padding: 3px;
+    font:0.95em arial,sans-serif;
+    vertical-align: top;
+    
+    text-align:center;
+}
+table.ref td {
+    border: 1px solid #C3C3C3;
+    padding: 3px;
+    /*vertical-align: top;*/
+    font:0.95em arial,sans-serif;
+    
+}
+table.ref td.name {
+    /*border: 1px solid #C3C3C3;*/
+    /*padding: 3px;*/
+    /*vertical-align: top;*/
+    
+    background:#E0FFFF;
+}
+table.ref td.green{
+	background:#CCFB5D;
+}
+table.ref td.yellow{
+	background:#ECE5B6;
+}
+table.ref td.red{
+	background:#FAAFBA;
+}
+table.ref td.white{
+	background:#E0FFFF;
+}
+table.ref td.footer{
+	font:0.85em arial,sans-serif;
+}

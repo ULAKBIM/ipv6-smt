@@ -1,0 +1,23 @@
+{
+	"name":"IPv6 Services Monitoring Tool (IPV6-SMT)",
+	"version":"0.1",
+	"input_file":"/var/www/IPv6-SMT/data/input.json",
+	"data_directory":"/var/www/IPv6-SMT/data/",
+	"debug":1,
+	
+	"nagios":
+	{
+		"check_http":"/usr/lib/nagios/plugins/check_http",
+		"check_dns":"/usr/lib/nagios/plugins/check_dns",
+		"check_smtp":"/usr/lib/nagios/plugins/check_smtp"
+	},
+	
+	"html":
+	{
+		"css":"css/style.css",
+		"js":"js/sorttable.js",
+		"images":"images/"
+	}
+		
+}
+
