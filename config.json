@@ -1,8 +1,8 @@
 {
 	"name":"IPv6 Services Monitoring Tool (IPV6-SMT)",
 	"version":"0.1",
-	"input_file":"/var/www/IPv6-SMT/data/input.json",
-	"data_directory":"/var/www/IPv6-SMT/data/",
+	"input_file":"/var/www/ipv6-smt/data/input.json",
+	"data_directory":"/var/www/ipv6-smt/data/",
 	"debug":1,
 	
 	"nagios":

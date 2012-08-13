@@ -59,10 +59,10 @@ II. RELEASE INFO
 
 III. REQUIREMENTS
 	
-	- Apache/2.2.22
+	- Global IPv6 connection in order to monitor IPv6 services.
+	- Apache/2.2.22 or later.
 	- PHP 5.3.10 or later.
 	- nagios-plugins package.
-
 
 IV. INSTALLATION & CONFIGURATION
 
@@ -78,7 +78,7 @@ IV. INSTALLATION & CONFIGURATION
 		# m h dom mon dow user  command
 		15 3    * * *   www-data    /usr/bin/php [exact_path]/data_collector.php
 	
-	When the data collection phase is completed, ipv6_smt.php will be executed through a browser. This script will read the collected data under domains directory and will show the domain service status report on the browser.
+	When the data collection phase is completed, index.php will be executed through a browser. This script will read the collected data under domains directory and will show the domain service status report on the browser.
 	
 	Data files will be automatically created by reading input file under data directory. Names will be in the format domains_dd-mm-yyyy.json and count_dd-mm-yyyy.json .
 	
