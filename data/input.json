@@ -1,25 +1,25 @@
 [
 	{
 		"inst_id":"1",
-		"inst_name":"Abant \u0130zzet Baysal \u00dcniversitesi",
+		"inst_name":"Abant Izzet Baysal Universitesi",
 		"inst_domain":"ibu.edu.tr",
 		"inst_prefix":"48"
 	},
 	{
 		"inst_id":"2",
-		"inst_name":"Abdullah G\u00fcl \u00dcniversitesi",
+		"inst_name":"Abdullah Gul Universitesi",
 		"inst_domain":"agu.edu.tr",
 		"inst_prefix":"48"
 	},
 	{
 		"inst_id":"3",
-		"inst_name":"Adana Bilim ve Teknoloji \u00dcniversitesi",
+		"inst_name":"Adana Bilim ve Teknoloji Universitesi",
 		"inst_domain":"adanabtu.edu.tr",
 		"inst_prefix":"-"
 	},
 	{
 		"inst_id":"4",
-		"inst_name":"Artvin \u00c7oruh \u00dcniversitesi",
+		"inst_name":"Artvin Coruh Universitesi",
 		"inst_domain":"artvin.edu.tr",
 		"inst_prefix":"48"
 	}
