@@ -39,7 +39,7 @@ if (!include('init.php'))
 	<body>
 	
 		<h3>IPv6 Services Monitoring Tool (IPv6-SMT)</h3>
-		<p>This page includes IPv6 service status of nodes connected to ULAKNET (Turkish Academic Network) which is run by ULAKBİM (Turkish NREN).</p>
+		<p>This page includes IPv6 service status of nodes.</p>
 
 		<table class="ref">
 			<thead>
