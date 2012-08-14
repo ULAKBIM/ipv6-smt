@@ -51,6 +51,7 @@ I. BRIEF DESCRIPTION
 
 II. RELEASE INFO
 
+	- Include statement updated and short tags removed in index.php.
 	v0.1
 	- First release of the script.
 	- Tested on Ubuntu 12.04.
