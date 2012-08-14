@@ -50,7 +50,8 @@ I. BRIEF DESCRIPTION
 		
 
 II. RELEASE INFO
-
+	
+	- domain_www option added for each institute to data/input.json file. WWW service will be checked based on this address.
 	- Include statement updated and short tags removed in index.php.
 	v0.1
 	- First release of the script.
