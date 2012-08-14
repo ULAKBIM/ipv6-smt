@@ -1,4 +1,3 @@
-<?php include("init.php")?>
 <!--
 /////////////////////////////////////////////
 // IPv6 Services Monitoring Tool (IPV6-SMT)
@@ -15,6 +14,13 @@
 /////////////////////////////////////////////
 -->
 
+<?php 
+if (!include('init.php')) 
+{
+    die("ERROR: Can not find init.php !");
+}
+?>
+
 <html>
 	<head>
 		<title>IPv6 Services Monitoring Tool (IPv6-SMT)</title>
@@ -26,8 +32,8 @@
 		<meta name="robots" content="index, follow, noarchive" />
 		<meta name="googlebot" content="noarchive" />
 
-		<link rel="stylesheet" type="text/css" media="screen" href="<?=$config_arr->html->css?>" />
-		<script type="text/javascript" src="<?=$config_arr->html->js?>"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $config_arr->html->css; ?>" />
+		<script type="text/javascript" src="<?php echo $config_arr->html->js; ?>"></script>
 	</head>
 	
 	<body>
@@ -58,7 +64,7 @@
 				<!--WWW-->
 				<tr>
 					<td class="name" rowspan="3">WWW</td>
-					<td class="green"><img src="<?=$config_arr->html->images?>/button-ipv6-small.png" style="width:50px;border:0;" /></td>
+					<td class="green"><img src="<?php echo $config_arr->html->images; ?>/button-ipv6-small.png" style="width:50px;border:0;" /></td>
 					<td align="left">Web server fully supports IPv6</td>
 				</tr>
 				<tr>
@@ -103,29 +109,29 @@
 				<th>MX</th>
 			</tr>
 			<tr>
-				<td colspan="2" rowspan="3" class="white"><b>Total: <?=$count_arr->Total?></b></td>
-				<td class="red"><?=$count_arr->IPv6_prefix->r?></td>
-				<td class="red"><?=$count_arr->WWW->r?></td>
-				<td class="red"><?=$count_arr->NS->r?></td>
-				<td class="red"><?=$count_arr->MX->r?></td>
+				<td colspan="2" rowspan="3" class="white"><b>Total: <?php echo $count_arr->Total; ?></b></td>
+				<td class="red"><?php echo $count_arr->IPv6_prefix->r; ?></td>
+				<td class="red"><?php echo $count_arr->WWW->r; ?></td>
+				<td class="red"><?php echo $count_arr->NS->r; ?></td>
+				<td class="red"><?php echo $count_arr->MX->r; ?></td>
 			</tr>
 			<tr>
-				<td class="yellow"><?=$count_arr->IPv6_prefix->y?></td>
-				<td class="yellow"><?=$count_arr->WWW->y?></td>
-				<td class="yellow"><?=$count_arr->NS->y?></td>
-				<td class="yellow"><?=$count_arr->MX->y?></td>
+				<td class="yellow"><?php echo $count_arr->IPv6_prefix->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->WWW->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->NS->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->MX->y; ?></td>
 			</tr>
 			<tr>
-				<td class="green"><?=$count_arr->IPv6_prefix->g?></td>
-				<td class="green"><?=$count_arr->WWW->g?></td>
-				<td class="green"><?=$count_arr->NS->g?></td>
-				<td class="green"><?=$count_arr->MX->g?></td>
+				<td class="green"><?php echo $count_arr->IPv6_prefix->g; ?></td>
+				<td class="green"><?php echo $count_arr->WWW->g; ?></td>
+				<td class="green"><?php echo $count_arr->NS->g; ?></td>
+				<td class="green"><?php echo $count_arr->MX->g; ?></td>
 			</tr>
 			</thead>
 			<tbody>
 			<tr>
 				<th colspan="3">
-					Status for <?=$req_date?>
+					Status for <?php echo $req_date; ?>
 				</th>
 				<th colspan="3">
 					 
@@ -142,7 +148,7 @@
 								$opt = explode('.',$option[sizeof($option)-1]);
 								$opt2 = explode('_',$opt[0]);
 							?>
-								<option value="?req_date=<?=$opt2[1]?>"><?=$opt2[1]?></option>
+								<option value="?req_date=<?php echo $opt2[1]; ?>"><?php echo $opt2[1]; ?></option>
 							<?
 							}
 							?>
@@ -172,8 +178,8 @@
 				{
 			?>
 			<tr>
-				<td class="name"><b><?=$domain_arr_item->name?></b></td>
-				<td class="name"><b><?=$domain_arr_item->domain?></b></td>
+				<td class="name"><b><?php echo $domain_arr_item->name; ?></b></td>
+				<td class="name"><b><?php echo $domain_arr_item->domain; ?></b></td>
 		
 				<!--IPv6 address block allocation-->
 				<?php
@@ -192,8 +198,8 @@
 							$key = 2;
 					}
 				?>
-				<td sorttable_customkey="<?=$key?>" class="<?=$color?>" style="text-align:center;">
-					<b><?=$domain_arr_item->IPv6_allocated?></b>
+				<td sorttable_customkey="<?php echo $key; ?>" class="<?php echo $color; ?>" style="text-align:center;">
+					<b><?php echo $domain_arr_item->IPv6_allocated; ?></b>
 				</td>
 		
 				<!--WWW-->
@@ -213,12 +219,12 @@
 					$color='red';
 					$key=3;
 				}
-				?>
-				<td sorttable_customkey="<?=$key?>" class="<?=$color?>">
+				 ?>
+				<td sorttable_customkey="<?php echo $key; ?>" class="<?php echo $color; ?>">
 				<?php
 					if ($domain_arr_item->WWW->IPv6_check)
 					{?>
-						<a href="http://www.<?=$domain_arr_item->domain?>" target="_blank"><img src="<?=$config_arr->html->images?>/button-ipv6-small.png" style="width:50px;border:0;"/></a>
+						<a href="http://www.<?php echo $domain_arr_item->domain; ?>" target="_blank"><img src="<?php echo $config_arr->html->images; ?>/button-ipv6-small.png" style="width:50px;border:0;"/></a>
 					<?}?>
 
 				</td>
@@ -240,8 +246,8 @@
 							$key = 2;
 					}
 				?>
-				<td sorttable_customkey="<?=$key?>" class="<?=$color?>">
-					<?=$domain_arr_item->Count->NS->IPv6_check?>/<?=$domain_arr_item->Count->NS->IPv6_support?>/<?=$domain_arr_item->Count->NS->Total?>
+				<td sorttable_customkey="<?php echo $key; ?>" class="<?php echo $color; ?>">
+					<?php echo $domain_arr_item->Count->NS->IPv6_check; ?>/<?php echo $domain_arr_item->Count->NS->IPv6_support; ?>/<?php echo $domain_arr_item->Count->NS->Total; ?>
 				</td>
 		
 				<!--MX-->
@@ -261,8 +267,8 @@
 							$key = 2;
 					}
 				?>
-				<td sorttable_customkey="<?=$key?>" class="<?=$color?>">
-					<?=$domain_arr_item->Count->MX->IPv6_check?>/<?=$domain_arr_item->Count->MX->IPv6_support?>/<?=$domain_arr_item->Count->MX->Total?>
+				<td sorttable_customkey="<?php echo $key; ?>" class="<?php echo $color; ?>">
+					<?php echo $domain_arr_item->Count->MX->IPv6_check; ?>/<?php echo $domain_arr_item->Count->MX->IPv6_support; ?>/<?php echo $domain_arr_item->Count->MX->Total; ?>
 				</td>
 
 			</tr>
@@ -282,23 +288,23 @@
 				<td colspan="6" class="footer">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="2" rowspan="3" class="white"><b>Total: <?=$count_arr->Total?></b></td>
-				<td class="red"><?=$count_arr->IPv6_prefix->r?></td>
-				<td class="red"><?=$count_arr->WWW->r?></td>
-				<td class="red"><?=$count_arr->NS->r?></td>
-				<td class="red"><?=$count_arr->MX->r?></td>
+				<td colspan="2" rowspan="3" class="white"><b>Total: <?php echo $count_arr->Total; ?></b></td>
+				<td class="red"><?php echo $count_arr->IPv6_prefix->r; ?></td>
+				<td class="red"><?php echo $count_arr->WWW->r; ?></td>
+				<td class="red"><?php echo $count_arr->NS->r; ?></td>
+				<td class="red"><?php echo $count_arr->MX->r; ?></td>
 			</tr>
 			<tr>
-				<td class="yellow"><?=$count_arr->IPv6_prefix->y?></td>
-				<td class="yellow"><?=$count_arr->WWW->y?></td>
-				<td class="yellow"><?=$count_arr->NS->y?></td>
-				<td class="yellow"><?=$count_arr->MX->y?></td>
+				<td class="yellow"><?php echo $count_arr->IPv6_prefix->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->WWW->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->NS->y; ?></td>
+				<td class="yellow"><?php echo $count_arr->MX->y; ?></td>
 			</tr>
 			<tr>
-				<td class="green"><?=$count_arr->IPv6_prefix->g?></td>
-				<td class="green"><?=$count_arr->WWW->g?></td>
-				<td class="green"><?=$count_arr->NS->g?></td>
-				<td class="green"><?=$count_arr->MX->g?></td>
+				<td class="green"><?php echo $count_arr->IPv6_prefix->g; ?></td>
+				<td class="green"><?php echo $count_arr->WWW->g; ?></td>
+				<td class="green"><?php echo $count_arr->NS->g; ?></td>
+				<td class="green"><?php echo $count_arr->MX->g; ?></td>
 			</tr>
 			<tr>
 				<td colspan="6" class="footer">ULAKBİM 2012</td>
