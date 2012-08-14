@@ -149,7 +149,7 @@ if (!include('init.php'))
 								$opt2 = explode('_',$opt[0]);
 							?>
 								<option value="?req_date=<?php echo $opt2[1]; ?>"><?php echo $opt2[1]; ?></option>
-							<?
+							<?php
 							}
 							?>
 						</select> 
@@ -203,7 +203,7 @@ if (!include('init.php'))
 				</td>
 		
 				<!--WWW-->
-				<? 
+				<?php 
 				if($domain_arr_item->WWW->IPv6_support && $domain_arr_item->WWW->IPv6_check)
 				{
 					$color='green';
@@ -225,7 +225,7 @@ if (!include('init.php'))
 					if ($domain_arr_item->WWW->IPv6_check)
 					{?>
 						<a href="http://www.<?php echo $domain_arr_item->domain; ?>" target="_blank"><img src="<?php echo $config_arr->html->images; ?>/button-ipv6-small.png" style="width:50px;border:0;"/></a>
-					<?}?>
+					<?php }?>
 
 				</td>
 		
