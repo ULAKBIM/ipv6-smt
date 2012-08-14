@@ -39,6 +39,7 @@ $domain_arr[] = array(
 			'id'=> '',
 			'name' => '', 
 			'domain' => '',
+			'domain_www' => '',
 			'IPv6_allocated' => '0', // 1 or 0
 			'WWW'=>array(
 				'HOST'=>'',
@@ -139,9 +140,11 @@ foreach ( $inst_array as $inst_array_item) {
 	$domain_arr[$i]['id'] = $inst_array_item->inst_id;
 	$domain_arr[$i]['name'] = $inst_array_item->inst_name;
 	$domain_arr[$i]['domain'] = $inst_array_item->inst_domain;
+	$domain_arr[$i]['domain_www'] = $inst_array_item->inst_domain_www;
 	$domain_arr[$i]['IPv6_allocated'] = $inst_array_item->inst_prefix;
 	
-	$domain = $domain_arr[$i]['domain']; 
+	$domain = $domain_arr[$i]['domain'];
+	$domain_www = $domain_arr[$i]['domain_www']; 
 	
 	$domain_arr[$i]['Count']['NS']['IPv6_check']=0;
 	$domain_arr[$i]['Count']['NS']['IPv6_support']=0;
@@ -150,14 +153,11 @@ foreach ( $inst_array as $inst_array_item) {
 	$domain_arr[$i]['Count']['MX']['IPv6_support']=0;
 	$domain_arr[$i]['Count']['MX']['Total']=0;
 
-	$WWW_CNAME = dns_get_record("www.".$domain, DNS_CNAME);
-	$WWW_A = dns_get_record("www.".$domain, DNS_A);
-	$WWW_AAAA = dns_get_record("www.".$domain, DNS_AAAA);
+	$WWW_CNAME = dns_get_record($domain_www, DNS_CNAME);
+	$WWW_A = dns_get_record($domain_www, DNS_A);
+	$WWW_AAAA = dns_get_record($domain_www, DNS_AAAA);
 	$res_NS = dns_get_record($domain, DNS_NS);
 	$res_MX = dns_get_record($domain, DNS_MX);
-	$FTP_CNAME = dns_get_record("ftp.".$domain, DNS_CNAME);
-	$FTP_A = dns_get_record("ftp.".$domain, DNS_A);
-	$FTP_AAAA = dns_get_record("ftp.".$domain, DNS_AAAA);
 	
 	//IPv6 address allocation
 	//Increase count for green or red
@@ -194,7 +194,7 @@ foreach ( $inst_array as $inst_array_item) {
 	{
 		//execute http check for $domain
 		$result=array();
-		exec($config_arr->nagios->check_http.' -H www.'.$domain.' -6', $result);
+		exec($config_arr->nagios->check_http.' -H '.$domain_www.' -6', $result);
 	
 		//parse the result of check_http
 		$pattern_WWW = '/^HTTP OK: HTTP\/1.1 200 OK/';
