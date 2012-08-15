@@ -22,6 +22,12 @@ if (file_exists("config.json"))
 else 
 	die("config.json file missing in script directory.");
 
+# Set default timezone if it is not set by php.ini file
+if(function_exists('date_default_timezone_set') AND (!ini_get('date.timezone')))
+{
+  date_default_timezone_set($config_arr->timezone);
+}
+
 //path to directory to scan
 $directory = $config_arr->data_directory;
 

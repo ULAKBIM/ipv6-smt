@@ -13,6 +13,9 @@
 // 
 /////////////////////////////////////////////
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 # Script should be run only from command line.
 if (php_sapi_name() != 'cli')
 {
@@ -107,6 +110,12 @@ $Count_arr = array(
 		'NS' => array('r'=>0,'y'=>0,'g'=>0), 
 		'MX' => array('r'=>0,'y'=>0,'g'=>0)
 		);
+
+# Set default timezone if it is not set by php.ini file
+if(function_exists('date_default_timezone_set') AND (!ini_get('date.timezone')))
+{
+  date_default_timezone_set($config_arr->timezone);
+}
 
 # Reading input file
 if ($config_arr->debug)

@@ -41,8 +41,8 @@ I. BRIEF DESCRIPTION
 		config.json
 	DATA FILES
 		data/input.json	
-		data/domains_08-08-2012.json
-		data/count_10-08-2012.json
+		data/domains_15-08-2012.json
+		data/count_15-08-2012.json
 	MISC
 		css/style.css
 		images/button-ipv6-small.png
@@ -50,13 +50,14 @@ I. BRIEF DESCRIPTION
 		
 
 II. RELEASE INFO
-	
-	- domain_www option added for each institute to data/input.json file. WWW service will be checked based on this address.
-	- Include statement updated and short tags removed in index.php.
+
+		- timezone option added to config.json file.	
+		- domain_www option added for each institute to data/input.json file. WWW service will be checked based on this address. If domain_www is empty (i.e. ""), www service will be checked for www.domain .
+		- Include statement updated and short tags removed in index.php.
 	v0.1
-	- First release of the script.
-	- Tested on Ubuntu 12.04.
-	- New feature: data_collector.php can only be run over CLI.
+		- First release of the script.
+		- Tested on Ubuntu 12.04.
+		- data_collector.php can only be run over CLI.
 
 
 III. REQUIREMENTS
@@ -70,7 +71,8 @@ IV. INSTALLATION & CONFIGURATION
 
 	You should have global IPv6 connection in your machine in order to use IPv6-SMT.	
 	PHP and nagios-plugins package should be installed at the system.
-	As the second step you should take a look at the config.json file to set the paths for data directory, input file and nagios-plugins scripts. 
+	You should take a look at the config.json file to set the required options (e.g. paths for data directory, input.json file and nagios-plugins scripts).
+	data/input.json file includes the institutes which will be monitored. 
 	You may configure debug mode as 1 if you like to see the details of what is being done.
 	Next step will be running the data_collector.php script on the command line. This script will collect all the necessary information and write them under the data directory in the json format.
 	Data collection may be added to the cron using the example below:
@@ -80,9 +82,9 @@ IV. INSTALLATION & CONFIGURATION
 		# m h dom mon dow user  command
 		15 3    * * *   www-data    /usr/bin/php [exact_path]/data_collector.php
 	
-	When the data collection phase is completed, index.php will be executed through a browser. This script will read the collected data under domains directory and will show the domain service status report on the browser.
+	When the data collection phase is completed, index.php will be executed through a browser. This script will read the collected data under data directory and will show the domain service status report on the browser.
 	
-	Data files will be automatically created by reading input file under data directory. Names will be in the format domains_dd-mm-yyyy.json and count_dd-mm-yyyy.json .
+	Data files will be automatically created by data_collector.php which reads input.json file under data directory. Names will be in the format domains_dd-mm-yyyy.json and count_dd-mm-yyyy.json .
 	
 	Select date list is created automatically by checking the domains_dd-mm-yyyy.json files under the data directory. If domains_dd-mm-yyyy.json file is smaller than 100b, it will not be listed in the select date list.
 

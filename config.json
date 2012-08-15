@@ -3,6 +3,7 @@
 	"version":"0.1",
 	"input_file":"/var/www/ipv6-smt/data/input.json",
 	"data_directory":"/var/www/ipv6-smt/data/",
+	"timezone":"Europe/Istanbul",	
 	"debug":1,
 	
 	"nagios":
