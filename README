@@ -72,6 +72,7 @@ IV. INSTALLATION & CONFIGURATION
 	You should have global IPv6 connection in your machine in order to use IPv6-SMT.	
 	PHP and nagios-plugins package should be installed at the system.
 	You should take a look at the config.json file to set the required options (e.g. paths for data directory, input.json file and nagios-plugins scripts).
+	Timezone (if not set by php.ini file) may be configured in config.json . Timezone list may be found in http://www.php.net/manual/en/timezones.php .	
 	data/input.json file includes the institutes which will be monitored. 
 	You may configure debug mode as 1 if you like to see the details of what is being done.
 	Next step will be running the data_collector.php script on the command line. This script will collect all the necessary information and write them under the data directory in the json format.
