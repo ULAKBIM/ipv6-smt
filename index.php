@@ -224,7 +224,7 @@ if (!include('init.php'))
 				<?php
 					if ($domain_arr_item->WWW->IPv6_check)
 					{?>
-						<a href="http://www.<?php echo $domain_arr_item->domain; ?>" target="_blank"><img src="<?php echo $config_arr->html->images; ?>/button-ipv6-small.png" style="width:50px;border:0;"/></a>
+						<a href="http://<?php echo $domain_arr_item->domain_www; ?>" target="_blank"><img src="<?php echo $config_arr->html->images; ?>/button-ipv6-small.png" style="width:50px;border:0;"/></a>
 					<?php }?>
 
 				</td>

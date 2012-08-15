@@ -140,7 +140,16 @@ foreach ( $inst_array as $inst_array_item) {
 	$domain_arr[$i]['id'] = $inst_array_item->inst_id;
 	$domain_arr[$i]['name'] = $inst_array_item->inst_name;
 	$domain_arr[$i]['domain'] = $inst_array_item->inst_domain;
-	$domain_arr[$i]['domain_www'] = $inst_array_item->inst_domain_www;
+
+	if ($inst_array_item->inst_domain_www !== '')
+	{	
+		$domain_arr[$i]['domain_www'] = $inst_array_item->inst_domain_www;
+	}
+	else
+	{
+		$domain_arr[$i]['domain_www'] = 'www.'.$inst_array_item->inst_domain;
+	}
+
 	$domain_arr[$i]['IPv6_allocated'] = $inst_array_item->inst_prefix;
 	
 	$domain = $domain_arr[$i]['domain'];
