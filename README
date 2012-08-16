@@ -8,9 +8,6 @@
 * Release date: 13.08.2012
 * License: GPL 2.0
 * Current file: README
-* 
-* Thanks to Murat Soysal - ULAKBİM, Onur Bektaş - ULAKBİM, Uğur Yılmaz - ULAKBİM
-* 
 ******************************************************************************
 
 CONTENTS
@@ -19,7 +16,8 @@ II.	RELEASE INFO
 III.	REQUIREMENTS
 IV.	INSTALLATION & CONFIGURATION
 V.	KNOWN ISSUES AND WORKAROUNDS
-VI.	TECHNICAL SUPPORT
+VI.	ACKNOWLEDGEMENT
+VII.	TECHNICAL SUPPORT
 
 
 I. BRIEF DESCRIPTION
@@ -28,7 +26,7 @@ I. BRIEF DESCRIPTION
 
 	IPv6-SMT will show you a report including the following topics for a list of domains:
 		IPv6 prefix allocation
-			- Has the institution allocated IPv6 address block (using config.json file).
+			- Check if the institution has allocated IPv6 address block (using config.json file).
 		WWW service
 			- Check if WWW service has AAAA record.
 			- Check if WWW service answers HTTP GET requests over IPv6.
@@ -84,6 +82,7 @@ III. REQUIREMENTS
 	- PHP 5.3.10 or later.
 	- nagios-plugins package.
 
+
 IV. INSTALLATION & CONFIGURATION
 
 	You should have global IPv6 connection in your machine in order to use IPv6-SMT.	
@@ -106,13 +105,16 @@ IV. INSTALLATION & CONFIGURATION
 	
 	Select date list is created automatically by checking the domains_dd-mm-yyyy.json files under the data directory. If domains_dd-mm-yyyy.json file is smaller than 100b, it will not be listed in the select date list.
 
-
 V. KNOWN ISSUES AND WORKAROUNDS
 
 
+VI. ACKNOWLEDGEMENT
 
-V. TECHNICAL SUPPORT 
+	Thanks to Murat Soysal (ULAKBİM), Onur Bektaş (ULAKBİM), Uğur Yılmaz (ULAKBİM) and Jan Zorz (LTFE) for the comments & feedback.
+	Thanks to GEN6 project (www.gen6.eu).
+
+
+VII. TECHNICAL SUPPORT 
 	
 	If you need technical assistance on this script or on IPv6, you may contact me at emre.yuce[@]tubitak.gov.tr .
-
 
