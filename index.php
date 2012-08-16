@@ -307,9 +307,17 @@ if (!include('init.php'))
 				<td class="green"><?php echo $count_arr->MX->g; ?></td>
 			</tr>
 			<tr>
-				<td colspan="6" class="footer"><?php echo $date("Y"); ?> <a href="https://github.com/ULAKBIM/ipv6-smt" title="IPv6 Services Monitoring Tool" target="_blank">IPv6 Services Monitoring Tool</a></td>
+				<td colspan="6" class="footer">&nbsp;</td>
 			</tr>
 			</tfoot>
+		</table>
+		<br />
+		<table class="ref" style="width:100%;">
+			<tr>
+				<td class="footer">
+					<?php echo date("Y");?> <a href="https://github.com/ULAKBIM/ipv6-smt" title="IPv6 Services Monitoring Tool" target="_blank">IPv6 Services Monitoring Tool</a>
+				</td>
+			</tr>
 		</table>
 	</body>
 </html>
