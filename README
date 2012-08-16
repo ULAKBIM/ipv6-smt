@@ -44,24 +44,24 @@ I. BRIEF DESCRIPTION
 		- IPv6 address assigned but there is no response to the requests over IPv6.
 		- Service fully supports IPv6.
 	
-	File list:
-	DOCUMENTATION FILES
-		README
-		TODO
-	PHP FILES
-		index.php
-		init.php
-		data_collector.php
-	CONFIG FILES
-		config.json
-	DATA FILES
-		data/input.json	
-		data/domains_15-08-2012.json
-		data/count_15-08-2012.json
-	MISC
-		css/style.css
-		images/button-ipv6-small.png
-		js/sorttable.js
+	List of files:
+		DOCUMENTATION FILES
+			README
+			TODO
+		PHP FILES
+			index.php
+			init.php
+			data_collector.php
+		CONFIG FILES
+			config.json
+		DATA FILES
+			data/input.json	
+			data/domains_15-08-2012.json
+			data/count_15-08-2012.json
+		MISC
+			css/style.css
+			images/button-ipv6-small.png
+			js/sorttable.js
 		
 
 II. RELEASE INFO
@@ -116,5 +116,5 @@ VI. ACKNOWLEDGEMENT
 
 VII. TECHNICAL SUPPORT 
 	
-	If you need technical assistance on this script or on IPv6, you may contact me at emre.yuce[@]tubitak.gov.tr .
+	If you need technical assistance on this script or on IPv6, you may contact to emre.yuce[at]tubitak.gov.tr .
 
