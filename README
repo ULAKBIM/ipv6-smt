@@ -24,10 +24,27 @@ VI.	TECHNICAL SUPPORT
 
 I. BRIEF DESCRIPTION
 
-	IPv6 Services Monitoring Tool (IPV6-SMT) is a tool that monitors http, dns and smtp services and checks whether these services are available over IPv6. IPv6-SMT queries a given list of domain names and check for AAAA, NS and MX records. There are 3 different states defined for a service namely: 
-	- No IPv6 address assigned.
-	- IPv6 address assigned but there is no response to the requests over IPv6.
-	- Service fully supports IPv6.
+	IPv6 Services Monitoring Tool (IPV6-SMT) is a tool that monitors http, dns and smtp services and checks whether these services are available over IPv6. IPv6-SMT queries a given list of domain names and check for AAAA, NS and MX records. 
+
+	IPv6-SMT will show you a report including the following topics for a list of domains:
+		IPv6 prefix allocation
+			- Has the institution allocated IPv6 address block (using config.json file).
+		WWW service
+			- Check if WWW service has AAAA record.
+			- Check if WWW service answers HTTP GET requests over IPv6.
+		Authorative DNS Servers
+			- Total number of NS records.
+			- Number of NS records with AAAA record.
+			- Number of NS records which answer DNS queries over IPv6.
+		Mail Server
+			- Total number of MX records.
+			- Number of MX records with AAAA record.
+			- Number of MX records which accept SMTP HELO over IPv6.
+	
+	There are 3 different states defined for a service namely: 
+		- No IPv6 address assigned.
+		- IPv6 address assigned but there is no response to the requests over IPv6.
+		- Service fully supports IPv6.
 	
 	File list:
 	DOCUMENTATION FILES
