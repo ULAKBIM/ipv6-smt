@@ -215,7 +215,7 @@ foreach ( $inst_array as $inst_array_item) {
 		exec($config_arr->nagios->check_http.' -H '.$domain_www.' -6', $result);
 	
 		//parse the result of check_http
-		$pattern_WWW = '/^HTTP OK: HTTP\/1.1 200 OK/';
+		$pattern_WWW = '/^HTTP OK: HTTP\/1.1 [1-3][0-9]{2} OK/';
 		if (preg_match($pattern_WWW, $result['0']))
 		{
 			$domain_arr[$i]['WWW']['IPv6_check'] = 1;
