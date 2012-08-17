@@ -1,19 +1,3 @@
-<!--
-/////////////////////////////////////////////
-// IPv6 Services Monitoring Tool (IPV6-SMT)
-//
-// Author: Emre Yüce - ULAKBİM
-// Contact: emre.yuce[@]tubitak.gov.tr
-// Version: 0.1
-// Release date: 15.08.2012
-// License: GPL 2.0 or later
-// Current file: ipv6_smt.php
-// 
-// Thanks to Murat Soysal - ULAKBİM, Onur Bektaş - ULAKBİM, Uğur Yılmaz - ULAKBİM
-// 
-/////////////////////////////////////////////
--->
-
 <?php 
 if (!include('init.php')) 
 {
