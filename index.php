@@ -1,3 +1,19 @@
+<!--
+/////////////////////////////////////////////
+// IPv6 Services Monitoring Tool (IPV6-SMT)
+//
+// Author: Emre Yüce - ULAKBİM
+// Contact: emre.yuce[@]tubitak.gov.tr
+// Version: 0.1
+// Release date: 15.08.2012
+// License: GPL 2.0 or later
+// Current file: ipv6_smt.php
+// 
+// Thanks to Murat Soysal - ULAKBİM, Onur Bektaş - ULAKBİM, Uğur Yılmaz - ULAKBİM
+// 
+/////////////////////////////////////////////
+-->
+
 <?php 
 if (!include('init.php')) 
 {
@@ -16,13 +32,11 @@ if (!include('init.php'))
 		<meta name="robots" content="index, follow, noarchive" />
 		<meta name="googlebot" content="noarchive" />
 
-		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $config_arr->html->css; ?>" />
-		<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-		<script type="text/javascript" src="<?php echo $config_arr->html->js; ?>"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $config_arr->html->css; ?>/style.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $config_arr->html->css; ?>/tabber.css" />
 		
-		<script type="text/javascript" src="js/tabber.js"></script>
-		<link rel="stylesheet" href="css/example.css" TYPE="text/css" MEDIA="screen">
-		
+		<script type="text/javascript" src="<?php echo $config_arr->html->js; ?>/sorttable.js"></script>
+		<script type="text/javascript" src="<?php echo $config_arr->html->js; ?>/tabber.js"></script>
 
 		<script type="text/javascript">
 
