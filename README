@@ -4,8 +4,8 @@
 * Source: https://github.com/ULAKBIM/ipv6-smt
 * Author: Emre Yüce - ULAKBİM
 * Contact: emre.yuce[@]tubitak.gov.tr
-* Version: 0.1
-* Release date: 13.08.2012
+* Version: 0.2
+* Release date: 17.08.2012
 * License: GPL 2.0
 * Current file: README
 ******************************************************************************
@@ -66,6 +66,8 @@ I. BRIEF DESCRIPTION
 
 II. RELEASE INFO
 
+	v0.2
+		- index.php updated, tabbed UI added.
 		- timezone option added to config.json file.	
 		- domain_www option added for each institute to data/input.json file. WWW service will be checked based on this address. If domain_www is empty (i.e. ""), www service will be checked for www.domain .
 		- Include statement updated and short tags removed in index.php.

@@ -1,20 +1,4 @@
 <?php
-/////////////////////////////////////////////
-// IPv6 Services Monitoring Tool (IPV6-SMT)
-//
-// Author: Emre Yüce - ULAKBİM
-// Contact: emre.yuce[@]tubitak.gov.tr
-// Version: 0.1
-// Release date: 15.08.2012
-// License: GPL 2.0 or later
-// Current file: data_collector.php
-// 
-// Thanks to Murat Soysal - ULAKBİM, Onur Bektaş - ULAKBİM, Uğur Yılmaz - ULAKBİM
-// 
-/////////////////////////////////////////////
-
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
 
 # Script should be run only from command line.
 if (php_sapi_name() != 'cli')

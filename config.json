@@ -15,9 +15,9 @@
 	
 	"html":
 	{
-		"css":"css/style.css",
-		"js":"js/sorttable.js",
-		"images":"images/"
+		"css":"./css",
+		"js":"./js",
+		"images":"./images"
 	}
 		
 }
