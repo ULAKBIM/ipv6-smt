@@ -7,9 +7,9 @@ if (php_sapi_name() != 'cli')
 }
 
 # Check for config.json in the same directory.
-if (file_exists("config.json"))
+if (file_exists(dirname($_SERVER['SCRIPT_FILENAME'])."/config.json"))
 {
-	$config = file_get_contents("config.json"); 
+	$config = file_get_contents(dirname($_SERVER['SCRIPT_FILENAME'])."/config.json");
 	$config_arr = json_decode($config);
 }
 else 
