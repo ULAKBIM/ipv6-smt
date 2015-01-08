@@ -196,7 +196,7 @@ foreach ( $inst_array as $inst_array_item) {
 	{
 		//execute http check for $domain
 		$result=array();
-		exec($config_arr->nagios->check_http.' -H '.$domain_www.' -6', $result);
+		exec($config_arr->nagios->check_http.' -H '.$domain_www.' -6 -f follow', $result);
 	
 		//parse the result of check_http
 		$pattern_WWW = '/^HTTP OK: HTTP\/1.1 [1-3][0-9]{2} OK/';
